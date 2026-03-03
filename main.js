@@ -36,15 +36,14 @@ function tampilkan() {
   
   document.getElementById("hasil").innerHTML = output
 }
-
+// fungsi untuk mengahapus barang terakhir dari keranjang
 function hapus() {
-  
+  dataBarang.pop()
+  tampilkan()
 }
-
+// fungsi untuk mereset keranjang
 function reset() {
-  
+  dataBarang = []
+  tampilkan()
 }
 
-function hitung() {
-  
-}
