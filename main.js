@@ -29,7 +29,9 @@ function tampilkan() {
     let harga = dataBarang[i]
     total += harga
     
-    output += "Barang ke-" + (i + 1) + ": Rp " + rupiah(harga) + "<br>"
+    output += "Barang ke-" + (i + 1) + ": Rp " + rupiah(harga)
+    +"<button onclick='hapusIndex(" + i + ")'class='hapus2'>hapus</button>"
+    + "<br>"
   }
   
   output += "<hr>Total: Rp" + rupiah(total)
@@ -90,3 +92,17 @@ function hapusNomor() {
   // kosongkan input nomor hapus setelah dihapus
   document.getElementById("nomorHapus"). value=""
 }
+
+// fungsi untiuk menghapus barang berdasarkan index
+function hapusIndex(index) {
+       // periksa apakah index varid
+  if (index >= 0 && index < dataBarang.length) {
+    // hapus barang dari array dataBarang menggunakan splice
+   dataBarang.splice(index, 1)
+  } else {
+    // jika nomor barang valid, tampilkan alert
+    alert("nomor barang tidak valid")
+  }
+  
+  tampilkan()
+} 
